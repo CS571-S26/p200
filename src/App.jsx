@@ -1,5 +1,6 @@
 import DormCard from './DormCard'
 import dorms from './data/dorms'
+import { HashRouter } from 'react-router-dom'
 
 function App() {
   return (
