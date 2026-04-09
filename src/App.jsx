@@ -1,20 +1,18 @@
-import DormCard from './DormCard'
-import dorms from './data/dorms'
-import { HashRouter } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import HomePage from './Pages/HomePage'
+import DormsPage from './Pages/DormsPage'
+import './App.css'
 
 function App() {
   return (
-    <div>
-      <h1>Rate My Dorm 🏠</h1>
-      {dorms.map(dorm => (
-        <DormCard
-          key={dorm.id}
-          name={dorm.name}
-          location={dorm.location}
-          rating={dorm.rating}
-        />
-      ))}
-    </div>
+    <HashRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dorms" element={<DormsPage />} />
+      </Routes>
+    </HashRouter>
   )
 }
 
