@@ -13,19 +13,14 @@ function NavBar() {
         <Navbar.Toggle aria-controls="main-nav" />
         <Navbar.Collapse id="main-nav">
           <Nav className="ms-auto">
-            <Nav.Link
-              as={Link}
-              to="/"
-              className={location.pathname === '/' ? 'nav-link-active' : ''}
-            >
+            <Nav.Link as={Link} to="/" className={location.pathname === '/' ? 'nav-link-active' : ''}>
               Home
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/dorms"
-              className={location.pathname === '/dorms' ? 'nav-link-active' : ''}
-            >
+            <Nav.Link as={Link} to="/dorms" className={location.pathname.startsWith('/dorms') ? 'nav-link-active' : ''}>
               Browse Dorms
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" className={location.pathname === '/about' ? 'nav-link-active' : ''}>
+              About
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
-import dorms from '../data/dorms'
  
 const categories = [
   { key: 'noise', label: '🔊 Noise Level' },
@@ -33,8 +32,7 @@ function StarInput({ label, value, onChange }) {
   )
 }
  
-function ReviewForm() {
-  const [selectedDorm, setSelectedDorm] = useState('')
+function ReviewForm({ dormId, dormName, addReview }) {
   const [ratings, setRatings] = useState({ noise: 0, social: 0, bathroom: 0, wifi: 0, overall: 0 })
   const [reviewText, setReviewText] = useState('')
   const [submitted, setSubmitted] = useState(false)
@@ -43,10 +41,6 @@ function ReviewForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
  
-    if (!selectedDorm) {
-      setError('Please select a dorm.')
-      return
-    }
     if (Object.values(ratings).some(r => r === 0)) {
       setError('Please rate all categories.')
       return
@@ -56,9 +50,9 @@ function ReviewForm() {
       return
     }
  
+    addReview({ dormId, dormName, ratings, reviewText, date: new Date().toLocaleDateString() })
     setError('')
     setSubmitted(true)
-    setSelectedDorm('')
     setRatings({ noise: 0, social: 0, bathroom: 0, wifi: 0, overall: 0 })
     setReviewText('')
     setTimeout(() => setSubmitted(false), 4000)
@@ -66,7 +60,7 @@ function ReviewForm() {
  
   return (
     <div className="review-form-wrapper">
-      <h3 className="review-form-title">Leave a Review</h3>
+      <h3 className="review-form-title">Leave a Review for {dormName}</h3>
  
       {submitted && (
         <Alert variant="success" className="review-success">
@@ -74,30 +68,10 @@ function ReviewForm() {
         </Alert>
       )}
       {error && (
-        <Alert variant="danger" className="review-error">
-          {error}
-        </Alert>
+        <Alert variant="danger">{error}</Alert>
       )}
  
       <Form onSubmit={handleSubmit}>
-        {/* Dorm Selector */}
-        <Form.Group className="mb-3">
-          <Form.Label className="review-text-label">Select a Dorm</Form.Label>
-          <Form.Select
-            value={selectedDorm}
-            onChange={(e) => setSelectedDorm(e.target.value)}
-            className="review-select"
-          >
-            <option value="">-- Choose a dorm --</option>
-            {dorms.map((dorm) => (
-              <option key={dorm.id} value={dorm.name}>
-                {dorm.name}
-              </option>
-            ))}
-          </Form.Select>
-        </Form.Group>
- 
-        {/* Star Ratings */}
         {categories.map(({ key, label }) => (
           <StarInput
             key={key}
@@ -107,7 +81,6 @@ function ReviewForm() {
           />
         ))}
  
-        {/* Written Review */}
         <Form.Group className="mt-3">
           <Form.Label className="review-text-label">Your Review</Form.Label>
           <Form.Control
@@ -129,3 +102,4 @@ function ReviewForm() {
 }
  
 export default ReviewForm
+ 

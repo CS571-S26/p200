@@ -1,4 +1,5 @@
 import { Card, Badge } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
  
 function StarRating({ rating }) {
   return (
@@ -13,9 +14,11 @@ function StarRating({ rating }) {
   )
 }
  
-function DormCard({ name, location, rating, distance, tags }) {
+function DormCard({ id, name, location, rating, distance, tags }) {
+  const navigate = useNavigate()
+ 
   return (
-    <Card className="dorm-card">
+    <Card className="dorm-card" onClick={() => navigate(`/dorms/${id}`)} style={{ cursor: 'pointer' }}>
       <Card.Body>
         <div className="card-header-row">
           <Card.Title className="dorm-name">{name}</Card.Title>
@@ -28,6 +31,7 @@ function DormCard({ name, location, rating, distance, tags }) {
             <Badge key={tag} className="dorm-tag">{tag}</Badge>
           ))}
         </div>
+        <p className="dorm-click-hint">Click to view reviews →</p>
       </Card.Body>
     </Card>
   )
