@@ -1,13 +1,25 @@
 const dorms = [
-  { id: 1, name: 'Sellery Hall', location: 'Southeast', rating: 4.2, distance: '12 min walk', tags: ['Social', 'Large', 'Dining nearby'] },
-  { id: 2, name: 'Witte Hall', location: 'Southeast', rating: 3.5, distance: '11 min walk', tags: ['Quiet floors', 'AC'] },
-  { id: 3, name: 'Humphrey Hall', location: 'Lakeshore', rating: 3.8, distance: '20 min walk', tags: ['Lake views', 'Cozy'] },
-  { id: 4, name: 'Smith Hall', location: 'Southeast', rating: 4.0, distance: '13 min walk', tags: ['Social', 'Modern'] },
-  { id: 5, name: 'Chadbourne Hall', location: 'Langdon', rating: 4.1, distance: '5 min walk', tags: ['Central', 'Historic'] },
-  { id: 6, name: 'Ogg Hall', location: 'Southeast', rating: 3.9, distance: '10 min walk', tags: ['Suite-style', 'Social'] },
-  { id: 7, name: 'Adams Hall', location: 'Lakeshore', rating: 4.3, distance: '21 min walk', tags: ['Lake views', 'Quiet'] },
-  { id: 8, name: 'Kronshage Hall', location: 'Lakeshore', rating: 4.2, distance: '19 min walk', tags: ['Nature', 'Tight-knit'] },
+  { id: 1,  name: 'Adams Hall',      location: 'Lakeshore', rating: 4.3, distance: '21 min walk', tags: ['Lake views', 'Quiet', 'Tight-knit'] },
+  { id: 2,  name: 'Barnard Hall',    location: 'Lakeshore', rating: 4.0, distance: '20 min walk', tags: ['Lake views', 'Cozy'] },
+  { id: 3,  name: 'Bradley Hall',    location: 'Lakeshore', rating: 3.9, distance: '22 min walk', tags: ['Lake views', 'Smaller'] },
+  { id: 4,  name: 'Chadbourne Hall', location: 'Langdon',   rating: 4.1, distance: '5 min walk',  tags: ['Central', 'Historic', 'Small community'] },
+  { id: 5,  name: 'Cole Hall',       location: 'Southeast', rating: 3.7, distance: '14 min walk', tags: ['Large', 'Social'] },
+  { id: 6,  name: 'Dejope Hall',     location: 'Southeast', rating: 3.8, distance: '15 min walk', tags: ['Suite-style', 'Newer'] },
+  { id: 7,  name: 'Humphrey Hall',   location: 'Lakeshore', rating: 3.8, distance: '20 min walk', tags: ['Lake views', 'Cozy'] },
+  { id: 8,  name: 'Jorns Hall',      location: 'Southeast', rating: 3.6, distance: '13 min walk', tags: ['Large', 'Dining nearby'] },
+  { id: 9,  name: 'Kronshage Hall',  location: 'Lakeshore', rating: 4.2, distance: '19 min walk', tags: ['Nature', 'Quiet', 'Tight-knit'] },
+  { id: 10, name: 'Leopold Hall',    location: 'Lakeshore', rating: 4.0, distance: '21 min walk', tags: ['Lake views', 'Quiet'] },
+  { id: 11, name: 'Lowell Hall',     location: 'Langdon',   rating: 3.9, distance: '6 min walk',  tags: ['Central', 'Small'] },
+  { id: 12, name: 'Merit Hall',      location: 'Southeast', rating: 4.0, distance: '12 min walk', tags: ['Newer', 'Suite-style', 'AC'] },
+  { id: 13, name: 'Ogg Hall',        location: 'Southeast', rating: 3.9, distance: '10 min walk', tags: ['Suite-style', 'Social'] },
+  { id: 14, name: 'Phillips Hall',   location: 'Lakeshore', rating: 4.1, distance: '20 min walk', tags: ['Lake views', 'Quiet'] },
+  { id: 15, name: 'Sellery Hall',    location: 'Southeast', rating: 4.2, distance: '12 min walk', tags: ['Social', 'Large', 'Dining nearby'] },
+  { id: 16, name: 'Slichter Hall',   location: 'Lakeshore', rating: 3.7, distance: '19 min walk', tags: ['Older', 'Lake views'] },
+  { id: 17, name: 'Smith Hall',      location: 'Southeast', rating: 4.0, distance: '13 min walk', tags: ['Social', 'Modern'] },
+  { id: 18, name: 'Sullivan Hall',   location: 'Lakeshore', rating: 4.1, distance: '22 min walk', tags: ['Lake views', 'Tight-knit'] },
+  { id: 19, name: 'Tripp Hall',      location: 'Lakeshore', rating: 4.0, distance: '22 min walk', tags: ['Lively', 'Lake views', 'Historic'] },
+  { id: 20, name: 'Waters Hall',     location: 'Lakeshore', rating: 3.8, distance: '21 min walk', tags: ['Lake views', 'Cozy'] },
+  { id: 21, name: 'Witte Hall',      location: 'Southeast', rating: 3.5, distance: '11 min walk', tags: ['Quiet floors', 'AC'] },
 ]
- 
+
 export default dorms
- 
